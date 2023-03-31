@@ -193,7 +193,12 @@ impl FoundLicense {
             }
         };
 
-        FinalizedLicense::new(&self.package, self.license.clone(), licenses)
+        FinalizedLicense::new(
+            &self.package,
+            self.license.clone(),
+            licenses,
+            self.package.repository.clone(),
+        )
     }
 }
 
